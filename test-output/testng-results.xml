@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-05T18:25:59 IST" name="Default suite" finished-at="2026-03-05T18:26:07 IST" duration-ms="8574">
+    <groups>
+    </groups>
+    <test started-at="2026-03-05T18:25:59 IST" name="Default test" finished-at="2026-03-05T18:26:07 IST" duration-ms="8574">
+      <class name="mission.test.UITest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:mission.test.UITest@79079097]" started-at="2026-03-05T18:25:59 IST" name="setup" finished-at="2026-03-05T18:26:06 IST" duration-ms="7182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyCheckoutFlow()[pri:0, instance:mission.test.UITest@79079097]" started-at="2026-03-05T18:26:06 IST" name="verifyCheckoutFlow" finished-at="2026-03-05T18:26:07 IST" duration-ms="1126" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCheckoutFlow -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:mission.test.UITest@79079097]" started-at="2026-03-05T18:26:07 IST" name="tearDown" finished-at="2026-03-05T18:26:07 IST" duration-ms="234" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCheckoutFlow status=SUCCESS method=UITest.verifyCheckoutFlow()[pri:0, instance:mission.test.UITest@79079097] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- mission.test.UITest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
