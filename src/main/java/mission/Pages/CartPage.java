@@ -1,10 +1,14 @@
 package mission.Pages;
 
-import org.openqa.selenium.*;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
+import mission.utils.ReportUtil;
 
 public class CartPage {
 
@@ -40,15 +44,19 @@ public class CartPage {
             }
         }
         return true;
+        
     }
 
     public void removeItem(String itemName){
         WebElement removeBtn = driver.findElement(
                 By.xpath("//div[text()='"+itemName+"']/ancestor::div[@class='cart_item']//button"));
         removeBtn.click();
+        ReportUtil.logStep("Removed 'Sauce Labs Fleece Jacket' from cart");
+
     }
 
     public void clickCheckout(){
         checkoutBtn.click();
+        ReportUtil.logStep("Clicked Checkout button");
     }
 }

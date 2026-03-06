@@ -6,6 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import mission.utils.ExtentReportManager;
+import mission.utils.ReportUtil;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -51,7 +54,9 @@ public class ProductsPage {
     public void addMultipleProducts(List<String> productNames) {
         for (String product : productNames) {
             addItemByName(product);
+            
         }
+        ReportUtil.logStep("Selected 4 products and added them to cart");
     }
 
 
@@ -65,10 +70,12 @@ public class ProductsPage {
         }
 
         return "0";
+        
     }
 
 
     public void clickCart(){
         cartIcon.click();
+        ReportUtil.logStep("Navigated to Cart page");
     }
 }

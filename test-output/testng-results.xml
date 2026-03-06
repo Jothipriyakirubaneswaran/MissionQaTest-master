@@ -1,32 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-05T18:25:59 IST" name="Default suite" finished-at="2026-03-05T18:26:07 IST" duration-ms="8574">
+  <suite started-at="2026-03-06T16:36:46 IST" name="Default suite" finished-at="2026-03-06T16:37:01 IST" duration-ms="14872">
     <groups>
     </groups>
-    <test started-at="2026-03-05T18:25:59 IST" name="Default test" finished-at="2026-03-05T18:26:07 IST" duration-ms="8574">
-      <class name="mission.test.UITest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:mission.test.UITest@79079097]" started-at="2026-03-05T18:25:59 IST" name="setup" finished-at="2026-03-05T18:26:06 IST" duration-ms="7182" status="PASS">
+    <test started-at="2026-03-06T16:36:46 IST" name="Default test" finished-at="2026-03-06T16:37:01 IST" duration-ms="14872">
+      <class name="mission.test.APITests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:mission.test.APITests@394df057]" started-at="2026-03-06T16:36:46 IST" name="setup" finished-at="2026-03-06T16:36:47 IST" duration-ms="731" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyCheckoutFlow()[pri:0, instance:mission.test.UITest@79079097]" started-at="2026-03-05T18:26:06 IST" name="verifyCheckoutFlow" finished-at="2026-03-05T18:26:07 IST" duration-ms="1126" status="PASS">
+        <test-method signature="delayedResponse_everyUserHasUniqueId()[pri:0, instance:mission.test.APITests@394df057]" started-at="2026-03-06T16:36:47 IST" name="delayedResponse_everyUserHasUniqueId" finished-at="2026-03-06T16:36:58 IST" duration-ms="11436" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCheckoutFlow -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:mission.test.UITest@79079097]" started-at="2026-03-05T18:26:07 IST" name="tearDown" finished-at="2026-03-05T18:26:07 IST" duration-ms="234" status="PASS">
+        </test-method> <!-- delayedResponse_everyUserHasUniqueId -->
+        <test-method signature="loginSuccessful_shouldReturn200()[pri:0, instance:mission.test.APITests@394df057]" started-at="2026-03-06T16:36:58 IST" name="loginSuccessful_shouldReturn200" finished-at="2026-03-06T16:36:58 IST" duration-ms="231" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginSuccessful_shouldReturn200 -->
+        <test-method signature="loginUnsuccessful_missingPassword_shouldReturn400()[pri:0, instance:mission.test.APITests@394df057]" started-at="2026-03-06T16:36:58 IST" name="loginUnsuccessful_missingPassword_shouldReturn400" finished-at="2026-03-06T16:36:58 IST" duration-ms="218" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginUnsuccessful_missingPassword_shouldReturn400 -->
+        <test-method signature="shouldCreateUser_andReturnExpectedFields(java.lang.String,java.lang.String)[pri:0, instance:mission.test.APITests@394df057]" started-at="2026-03-06T16:36:58 IST" name="shouldCreateUser_andReturnExpectedFields" data-provider="createUserData" finished-at="2026-03-06T16:36:59 IST" duration-ms="212" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyCheckoutFlow status=SUCCESS method=UITest.verifyCheckoutFlow()[pri:0, instance:mission.test.UITest@79079097] output={null}]]]>
+                <![CDATA[Peter]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Manager]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+        </test-method> <!-- shouldCreateUser_andReturnExpectedFields -->
+        <test-method signature="shouldCreateUser_andReturnExpectedFields(java.lang.String,java.lang.String)[pri:0, instance:mission.test.APITests@394df057]" started-at="2026-03-06T16:36:59 IST" name="shouldCreateUser_andReturnExpectedFields" data-provider="createUserData" finished-at="2026-03-06T16:36:59 IST" duration-ms="211" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Liza]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Sales]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldCreateUser_andReturnExpectedFields -->
+        <test-method signature="shouldListUsers_totalEqualsNumberOfIds()[pri:0, instance:mission.test.APITests@394df057]" started-at="2026-03-06T16:36:59 IST" name="shouldListUsers_totalEqualsNumberOfIds" finished-at="2026-03-06T16:37:00 IST" duration-ms="908" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldListUsers_totalEqualsNumberOfIds -->
+        <test-method signature="shouldReturn404ForMissingUser()[pri:0, instance:mission.test.APITests@394df057]" started-at="2026-03-06T16:37:00 IST" name="shouldReturn404ForMissingUser" finished-at="2026-03-06T16:37:00 IST" duration-ms="330" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldReturn404ForMissingUser -->
+        <test-method signature="shouldReturnSingleUserData()[pri:0, instance:mission.test.APITests@394df057]" started-at="2026-03-06T16:37:00 IST" name="shouldReturnSingleUserData" finished-at="2026-03-06T16:37:00 IST" duration-ms="352" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shouldReturnSingleUserData -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:mission.test.APITests@394df057]" started-at="2026-03-06T16:37:00 IST" name="tearDown" finished-at="2026-03-06T16:37:01 IST" duration-ms="193" status="PASS">
+          <reporter-output>
+          </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- mission.test.UITest -->
+      </class> <!-- mission.test.APITests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,6 +3,9 @@ package mission.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import mission.utils.ExtentReportManager;
+import mission.utils.ReportUtil;
+
 
 public class LoginPage {
 	
@@ -22,6 +25,8 @@ public class LoginPage {
 	        driver.findElement(username).sendKeys(user);
 	        driver.findElement(password).sendKeys(pass);
 	        driver.findElement(loginBtn).click();
+	        ReportUtil.logStep("User logged into the application");
+
 	    }
 	}
 

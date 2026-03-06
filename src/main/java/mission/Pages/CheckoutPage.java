@@ -7,6 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import mission.utils.ExtentReportManager;
+import mission.utils.ReportUtil;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -54,10 +57,12 @@ public class CheckoutPage {
         firstName.sendKeys(fName);
         lastName.sendKeys(lName);
         postalCode.sendKeys(zip);
+        ReportUtil.logStep("Entered checkout user details");
     }
 
     public void clickContinue(){
         continueBtn.click();
+        ReportUtil.logStep("Navigated to order summary page");
     }
 
     public double calculateItemTotal(){
