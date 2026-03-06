@@ -1,65 +1,172 @@
 # QA Automation Assignment
 
-We have added two tests: the first task is API-Test.feature and the second is UI-Test.feature.
-- For the API-Test.feature, please visit https://reqres.in/. This should contain all the requirements.
-- UI-Test.feature please visit https://www.saucedemo.com/
+This project contains two automated test modules:
+API Tests
+UI Tests
+# For the API tests, please visit:
+https://reqres.in/
+# For the UI tests, please visit:
+https://www.saucedemo.com/
+The framework validates both API endpoints and UI user flows using an automated testing approach.
 
+# The framework is implemented using:
 
-Please DO use Page objects, make sure the code is reusable and feel free to improve the current code.
+Java
+Selenium WebDriver
+RestAssured
+TestNG
+Extent Reports
+Page Object Model
+The code is designed to be reusable, maintainable, and scalable.
+Test Automation Framework
+This is a Maven-based Automation Framework.
+The pom.xml file contains all dependencies required to build and execute the tests.
 
-**Note: We have intentionally added some bugs for you to debug.** 
+# Additional dependencies added include:
+Selenium WebDriver
+TestNG
+RestAssured
+Extent Reports
+Project Structure
 
-Please contact the Mission Team if you have any questions.
+# The following folder contains the core automation framework classes
 
+src/main/java/mission
+mission.base
 
-Good luck!
+# BaseTest
+Handles WebDriver initialization and teardown
+Opens and closes the browser before and after test execution
 
-## Test Automation Framework
+# mission.pages
+This package contains Page Object Model classes.
+Each class represents a page of the UI application.
+LoginPage
+Handles login functionality
+ProductsPage
+Handles product listing page
+Adding products to cart
+Cart navigation
+CartPage
+Handles cart operations
+Verify quantities
+Remove items
+CheckoutPage
+Handles checkout flow
+Entering user details
+Validating order totals
+mission.utils
+This package contains reusable utility classes.
+ConfigReader
+Reads values from config.properties
+ExtentReportManager
+Creates and configures Extent Reports
+TestListener
+# TestNG listener used for:
+Logging test steps
+Capturing screenshots on failure
+Updating Extent Reports
+Test Classes
 
-- This is a Maven based framework
-- `pom.xml` should have everything you need to create and run the tests. Please add further dependencies if you require it.
+# The following folder contains the test implementation classes
 
-The following folder `src/test/java/AutomationTest/mission` contains the following class:
+src/test/java/mission/test
+UITest
+Automates the end-to-end checkout flow in SauceDemo.
 
-- `Hook` - this is the before and after. This launches and kills the browser.
-- `RunnerTest` - contains the CucumberOptions which runs the BDD's
+# Steps covered:
+Launch browser
+Login with valid credentials
+Add multiple products to cart
+Verify cart count
+Navigate to cart page
+Validate item quantities
+Remove one item
+Proceed to checkout
+Enter checkout details
+Validate tax calculation
 
-The following folder `src/main/java/AutomationTest/mission` contains the following class:
+Products added to cart:
+Sauce Labs Backpack
+Sauce Labs Fleece Jacket
+Sauce Labs Bolt T-Shirt
+Sauce Labs Onesie
 
-- `BrowserSetup` - This contains the setup of a given browser based on what is set to Browser property within `TestData.properties` 
+APITests
+Automates multiple ReqRes API endpoints.
+Test scenarios include:
+List users with pagination
+Validate total users count
+Get single user details
+Validate 404 response for missing user
+Create user using DataProvider
+Validate successful login
+Validate login failure
+Validate delayed API responses
+Configuration
 
- 
-## Steps to execute this project
+# Test data and configuration values are stored in:
+src/test/resources/config.properties
+Example:
+username=standard_user
+password=secret_sauce
+browser=chrome
+This allows easy modification of test inputs without changing the code.
 
-- Pre-requisites
-    - JAVA SDK 1.8 or higher
-    - Maven CLI (on PATH)
-    
-- Steps
-    - Clone the project to local
-    - Open a command line or any IDE that supports Java & Maven
-    - Make sure to build the project so test classes are compiled into `target/test-classes` before running TestNG directly:
+# Reporting
+The framework uses Extent Reports for detailed test reporting.
+Reports include:
+Test case status
+Execution steps
+Pass/Fail results
+Error messages
+Screenshots on failure
 
-        - From command line run:
+# Reports are generated in:
+/reports
+Each execution generates a timestamped report so previous results are not overwritten.
 
-            mvn clean test
+# Example:
+reports/TestExecutionReport_20260306_184530.html
+Steps to Execute This Project
+Pre-requisites
 
-        - Or run only compilation (if you want to compile without running tests):
+# Install the following tools:
+Java SDK 8 or higher
+Maven
+Chrome Browser
+Internet access
+Running the Tests
+Run All Tests
 
-            mvn test-compile
+# From command line:
 
-    - If you prefer to run TestNG via IDE, open the `testng.xml` at the project root (we included one that references `mission.test.APITests`) and run it from the IDE **after building the project**.
+mvn clean test
+Compile Tests Only
+mvn test-compile
+Run Tests from IDE
 
-    - On Windows you can use the helper script `run-tests.bat` which will attempt to run `mvn test` (it checks that `mvn` is on PATH and prints instructions if not).
+# Open the project in Eclipse or IntelliJ
+Locate testng.xml
 
-    - Results will be captured in the `test-output` folder.
+# Run the TestNG file
 
-Troubleshooting: "Cannot find class in classpath: mission.test.APITests"
+# Test Results
+Execution results will be generated in:
+test-output and /reports
+# Troubleshooting
+Error:
+Cannot find class in classpath: mission.test.APITests
+Possible fixes:
+Build the project before executing tests
+mvn test-compile
+or
+mvn clean test
+Ensure the test classes exist in:
+target/test-classes
 
-- This error means TestNG could not find the compiled test class. Common fixes:
-  - Build the project first (see `mvn test-compile` or `mvn test`). TestNG needs the compiled classes in `target/test-classes`.
-  - Ensure your IDE's Run Configuration includes the module's test output directory on the classpath.
-  - If running TestNG from command line with `testng.xml`, run `mvn test` or `mvn -Dtest=mission.test.APITests test` so surefire compiles and executes tests with dependencies on the classpath.
-  - If you still see 403 or non-JSON responses, verify network access and that `https://reqres.in/api` is reachable from your environment.
-
-If you'd like, I can also add a small `mvnw` wrapper to the repo so you can run `mvnw test` without installing Maven globally. Let me know if you want that and I will add it.
+# If running from IDE, ensure the module's test output directory is included in the classpath
+API Authentication Issues
+# If API requests return 401 Unauthorized, verify that the request header includes the required API key.
+Example header used in this framework:
+x-api-key: <your_api_key>
